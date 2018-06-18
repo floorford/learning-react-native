@@ -19,7 +19,8 @@ export default class App extends React.Component {
   onPress = (i) => {
 
     const { selected, pressed, history } = this.state;
-
+    selected === null ? answer = null : selected === 1 ? answer = "You chose the Red Pill" : answer = "You chose the Blue Pill"
+  
     this.setState({
       selected: i,
       pressed: pressed + i,
@@ -30,7 +31,6 @@ export default class App extends React.Component {
   render() {
 
     const { selected, history, pressed } = this.state
-    selected === null ? answer = null : selected === 1 ? answer = "You chose the Red Pill" : answer = "You chose the Blue Pill"
 
     return (
       <View style={ styles.container }>
@@ -112,7 +112,7 @@ const styles = StyleSheet.create({
     fontWeight: "bold"
   },
   quotes: {
-    marginTop: 5,
+    marginVertical: 5,
     color: "#222222",
     fontSize: 16,
     lineHeight: 22
